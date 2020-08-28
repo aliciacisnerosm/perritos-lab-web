@@ -1,0 +1,7 @@
+.dir {
+  display: flex;
+  justify-content: space-around;
+}
+.size-img{
+  height: 300px;
+}
