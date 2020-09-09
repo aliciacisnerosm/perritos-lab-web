@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="./index.css"">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://npmcdn.com/vue/dist/vue.js"></script>
 
   <title>Perritos</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg  fixed-top navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -17,15 +21,16 @@
       <div class="navbar-nav">
         <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
         <a class="nav-item nav-link active" href="https://www.instagram.com/proyecto_salvavidas/" tabindex="-1">Adopta un perrito</a>
+        <a class="nav-item nav-link active" href="https://www.linkedin.com/in/aliciacisnerosm/" tabindex="-1">Sígueme en linkedin</a>
       </div>
     </div>
   </nav>
-
-  <h1 class="text-center my-5">¡Perritos!</h1>
-
+  <div class="container my-5">
+   <h1 class="text-center my-5">¡Perritos!</h1>
+  </div>
 <div class="container my-5">
   <div class="row d-flex">
-    <div class="col-lg-4 d-flex">
+    <div class="col-sm m-2 d-flex">
       <div class="card" style="width: 18rem; ">
         <img src="https://assets.nacionrex.com/__export/1582590075513/sites/debate/img/2020/02/24/69ec52ac01bd9e7c316b91bd4c3aa2ed_crop1582590058186.jpg_1577178466.jpg" class="card-img-top size-img" alt="perrito-1">
         <div class="card-body">
@@ -36,7 +41,7 @@
       </div>
     </div>
     
-    <div class="col-lg-4 d-flex"">
+    <div class="col-sm m-2 d-flex"">
       <div class="card" style="width: 18rem;">
         <img src="https://dam.vanidades.com/wp-content/uploads/2020/04/%C2%A1Como-si-necesit%C3%A1ramos-m%C3%A1s-razones-para-amar-a-los-perritos-Seg%C3%BAn-investigadores-el-mejor-amigo-del-hombre-podr%C3%ADa-ayudar-a-detectar-el-coronavirus.-770x513.jpg" class="card-img-top size-img" alt="...">
         <div class="card-body">
@@ -46,7 +51,7 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-4 d-flex"">
+    <div class="col-lg-4 d-flex">
       <div class="card" style="width: 18rem;">
         <img src="https://www.okchicas.com/wp-content/uploads/2015/02/perritos-m%C3%A1s-adorables-11.jpg" class="card-img-top size-img" alt="...">
         <div class="card-body">
@@ -58,6 +63,21 @@
     </div>
   </div>
 </div>
+
+<div class="container my-5" id="exercise">
+  <h1>Vue </h1>
+  <h2>Tú: {{value}} {{aceptas}} </h2>
+  <input v-model="value" placeholder="nombre"/>
+  <div class="container my-5">
+    <h1 v-if="awesome">Los perritos son muy bonitos</h1>
+    <button v-on:click="awesome = !awesome">Ocultar mensaje anterior</button>
+  </div>
+  <div class="container my-5">
+    <img  v-if="notImage" style="width:20%;" v-bind:src="image">
+    <button @click="changeTitle">Cambiar imagen de perrito</button>
+  </div>
+</div>
+
  <div class="container my-5">
   <h4>Registrate aquí para más info</h4>
   <form>
@@ -77,6 +97,35 @@
     <button type="submit" class="btn btn-light">Submit</button>
   </form>
 </div>
+<div class="container">
+  <h2>Otros perritos</h2>  
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="https://1.bp.blogspot.com/--Becx7wVqXI/XQ6ldZJwGDI/AAAAAAAAPwo/hYZtvjfdNzYt54yF-st2CJ0E9tVDGv1VQCLcBGAs/s1600/perrito.png" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="https://image.winudf.com/v2/image/Y29tLlB1cHBpZXNMaXZlV2FsbHBhcGVyX3NjcmVlbl81XzE1Mzc5NjA4NDdfMDAz/screen-5.jpg?fakeurl=1&type=.jpg" alt="Chicago" style="width:100%;">
+      </div>
+    
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
 <div class="container my-5">
   <div class="alert alert-primary" role="alert">
     <h4 class="alert-heading">Well done!</h4>
@@ -93,6 +142,22 @@
     </div>
   </div>
 </div>
+<div class="page-footer font-small my-5">
+  <div class="container text-center border bg-white border-0">
+    <div class="row p-5">
+      <div class="col-sm-4 text-center">
+        <a href="https://github.com/aliciacisnerosm">Github</a>
+      </div>
+      <div class="col-sm-4 text-center">
+        <a href="https://twitter.com/aliciacisnerosm">Twitter</a>
+      </div>
+      <div class="col-sm-4 text-center">
+        <a href="https://www.linkedin.com/in/aliciacisnerosm/">Linkedin</a>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
+<script src="app.js"></script>
 </html>
 <!doctype html>
